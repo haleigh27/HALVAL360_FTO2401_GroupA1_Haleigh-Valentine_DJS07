@@ -1,19 +1,24 @@
 import { useState, useEffect } from 'react';
 
 export default function Meme() {
+	//meme State
 	const [meme, setMeme] = useState({
 		topText: '',
 		bottomText: '',
 		randomImage: 'http://i.imgflip.com/1bij.jpg',
 	});
+
+	// allMemes State
 	const [allMemes, setAllMemes] = useState([]);
 
+	// useEffect Hook to fetch memes data from API
 	useEffect(() => {
 		fetch('https://api.imgflip.com/get_memes')
 			.then((res) => res.json())
 			.then((data) => setAllMemes(data.data.memes));
 	}, []);
 
+	// Function which gets a random meme url and resets randomImage property in meme state.
 	function getMemeImage() {
 		const randomNumber = Math.floor(Math.random() * allMemes.length);
 		const url = allMemes[randomNumber].url;
@@ -23,6 +28,7 @@ export default function Meme() {
 		}));
 	}
 
+	// Event listener function which resets topText and bottomText properties in meme state.
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setMeme((prevMeme) => ({
@@ -31,6 +37,7 @@ export default function Meme() {
 		}));
 	}
 
+	// Meme component content
 	return (
 		<main>
 			<div className="form">
