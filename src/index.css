@@ -61,6 +61,8 @@ main {
 
 .meme {
 	position: relative;
+	max-width: fit-content;
+	margin: 0 auto;
 }
 
 .meme--image {
