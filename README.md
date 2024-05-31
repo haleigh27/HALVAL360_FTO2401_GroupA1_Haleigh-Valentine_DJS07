@@ -1,7 +1,9 @@
 # DJS07 - Build a Meme Generator
 
-In this challenge you are required to code-along the Scrimba lesson: https://scrimba.com/playlist/prXJpCQ
+A meme generator application built with React.
 
-This starter repo only has CSS styling added to the empty React project.
+## Run
 
-After cloning run `npm install` to install dependencies.
+1. Run `npm install` to install dependencies.
+2. Run `npm run dev`
+3. Visit the hyperlink provided.
